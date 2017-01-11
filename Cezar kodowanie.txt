@@ -1,0 +1,23 @@
+import string
+import sys
+alfabet = (string.ascii_lowercase)
+shift = 4
+
+def szukaj(mojaLitera, shift):
+	x = 0 
+	for litera in alfabet:
+		if mojaLitera == litera:
+			nowyKod = (x+shift)%len(alfabet)
+			print(x, alfabet[x], '->', nowyKod, alfabet[nowyKod])
+			break
+		else:
+			x = x + 1
+
+
+print('dzień dobry, chcesz wpisać słowo?')
+odpowiedz = input()
+if odpowiedz.lower() == 'tak':
+  print('wpisz słowo:')
+  wyraz = input()
+  for singleLetter in wyraz:
+	  szukaj(singleLetter, 1565)
